@@ -1,9 +1,10 @@
 <template>
-<section>
+<main>
+  <h1>Hotel Checkins</h1>
   <guest-form />
   <guest-grid :guests="guests" />
   <!-- <li v-for="guest in guests" :guest="guest"> {{guest.name}}</li> -->
-  </section>
+  </main>
 </template>
 
 <script>
@@ -55,5 +56,26 @@ export default {
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+   
+   main {
+     background-color: #4605df;
+     background-image: url('https://wallpaperaccess.com/full/2718925.jpg');
+     margin: 0px;
+
+    height: 100vh;
+    width: 100vw;
+    text-align: center;
+
+    font-family:'Righteous', cursive; ;
+
+   }
+
+  h1 {
+    font-size: 100pt;
+    margin: 0px;
+    text-shadow: 10px 10px 10px #e4e008;
+  }
+
 
 </style>

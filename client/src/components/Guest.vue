@@ -29,4 +29,14 @@ export default {
 
 <style lang='css' scoped>
 
+.guest {
+  width: 30%;
+  background: #9c0082;
+  mix-blend-mode: multiply;
+  margin: 30px;
+  padding: 25px;
+  box-shadow: 10px 10px 5px #e4e008;
+  color: #ffffff;
+}
+
 </style>

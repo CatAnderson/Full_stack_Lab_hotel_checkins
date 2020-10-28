@@ -1,5 +1,5 @@
 const express = require('express');
-const ObjectId = require('mongodb').ObjectId;
+const ObjectID = require('mongodb').ObjectID;
 
 const createRouter = function (collection) {
     const router = express.Router();
@@ -19,7 +19,7 @@ const createRouter = function (collection) {
     router.get('/:id', (req,res) => {
         const id = req.params.id;
         collection
-            .findOne({ _id: ObjectId(id) })
+            .findOne({ _id: ObjectID(id) })
             .then((doc) => res.json(doc))
             .catch((err) => {
                 console.error(err);
@@ -44,7 +44,7 @@ const createRouter = function (collection) {
     router.delete('/:id', (req, res) => {
         const id = req.params.id;
         collection
-            .deleteOne({_id: ObjectId(id)})
+            .deleteOne({_id: ObjectID(id)})
             .then(result => {
             res.json(result)
         })
@@ -61,7 +61,7 @@ const createRouter = function (collection) {
         const updatedGuest = req.body;
         collection
             .findOneAndUpdate(
-                { _id: ObjectId(id)},
+                { _id: ObjectID(id)},
                 {$set: updatedGuest},
                 {returnOriginal: false}
             )

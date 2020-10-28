@@ -42,6 +42,11 @@ export default {
           this.guests.push(guest)
         );
       });
+
+      eventBus.$on("guest-deleted", (id) => {
+        let index = this.guests.findIndex((guest) => guest._id === id);
+        this.guests.splice(index, 1);
+      });
     }
   }
 

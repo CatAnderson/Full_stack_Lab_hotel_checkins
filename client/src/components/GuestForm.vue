@@ -1,5 +1,5 @@
 <template lang='html'>
-  <form id="guest-form" v-on:submit="addGuest">
+  <form id="guest-form" v-on:submit.prevent="addGuest">
       <h2>Create a new Guest Booking</h2>
       <div class="formWrap">
           <label for="name">Name: </label>

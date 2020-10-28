@@ -39,7 +39,42 @@ const createRouter = function (collection) {
             res.status(500);
             res.json({ status: 500, error: err })
         });
+    });
+    
+    router.delete('/:id', (req, res) => {
+        const id = req.params.id;
+        collection
+            .deleteOne({_id: ObjectId(id)})
+            .then(result => {
+            res.json(result)
+        })
+            
+        .catch((err) => {
+                console.error(err);
+                res.status(500);
+                res.json({ status: 500, error: err });
+        })
+    });
+
+    router.patch('/:id', (req, res) => {
+        const id = req.params.id;
+        const updatedGuest = req.body;
+        collection
+            .findOneAndUpdate(
+                { _id: ObjectId(id)},
+                {$set: updatedGuest},
+                {returnOriginal: false}
+            )
+            .then((result) => {
+                res.json(result.value)
+            })
+            .catch((err) => {
+                console.error(err);
+                res.status(500);
+                res.json({ status: 500, error: err });
+        })
     })
+
     return router;
 };
 

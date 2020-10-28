@@ -1,5 +1,5 @@
 <template lang='html'>
-  <section>
+  <section id='guestGrid'>
       <guest v-for="(guest, index) in guests" :key='index' :guest="guest" />
   </section>
 </template>
@@ -18,5 +18,10 @@ export default {
 </script>
 
 <style lang='css' scoped>
+#guestsGrid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
 
 </style>
